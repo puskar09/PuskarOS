@@ -82,3 +82,19 @@
 - `vite.config.ts` — added @services, @types, @ui, @shared aliases
 - `tsconfig.app.json` — matching path additions
 **Notes:** Build passes 0 errors. src/layouts/ kept as re-export layer for alias compatibility. Canonical implementations are now in src/components/layout/.
+
+---
+
+## Phase 4 — Reusable UI Primitive Library
+**Date:** 2026-07-05
+**Work:** Production-ready UI primitive library implemented in `src/components/ui/` adhering to the Puskar OS calm, premium AI OS aesthetic (Apple/Linear/Arc feel).
+**Files Created / Modified:**
+- `src/components/ui/GlassCard.tsx` — glass card surface with variants (default, subtle, interactive, ghost) and optional glow.
+- `src/components/ui/GlassCardSubtle.tsx` — convenience wrapper for secondary glass surfaces.
+- `src/components/ui/Button.tsx` — polymorphic button with CVA variants (default CTA pill, accent, secondary, outline, ghost, danger) and Radix Slot support.
+- `src/components/ui/ProgressBar.tsx` — progress bar with percentage calculation, label positioning, accessible ARIA roles, and ambient gloss reflections.
+- `src/components/ui/PillBadge.tsx` — status badge with size/color presets and optional animated pulse dot.
+- `src/components/ui/SectionTitle.tsx` — polymorphic heading component with size scales, text gradient support, subtitle, and badge/action slots.
+- `src/components/ui/Divider.tsx` — separator with horizontal/vertical orientation, glow variants, and optional centered label.
+- `src/components/ui/index.ts` — barrel export updated with all primitives and TypeScript prop types.
+**Notes:** Built with CVA, Tailwind CSS, and Puskar OS design tokens. Zero business logic or page-specific code. Production build compiled cleanly with 0 errors.

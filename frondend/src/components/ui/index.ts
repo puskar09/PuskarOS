@@ -9,13 +9,21 @@
  * - No data fetching
  * - No knowledge of features or routes
  * - Fully reusable across the entire app
- *
- * Planned components (Phase 3+):
- * GlassCard, GlassCardSubtle, ProgressBar, PillBadge, StatChip
  */
 
-// export { GlassCard } from './GlassCard'
-// export { GlassCardSubtle } from './GlassCardSubtle'
-// export { ProgressBar } from './ProgressBar'
-// export { PillBadge } from './PillBadge'
-// export { StatChip } from './StatChip'
+export { GlassCard, glassCardVariants, type GlassCardProps } from './GlassCard'
+export { GlassCardSubtle } from './GlassCardSubtle'
+export { Button, buttonVariants, type ButtonProps } from './Button'
+export {
+  ProgressBar,
+  progressBarVariants,
+  progressFillVariants,
+  type ProgressBarProps,
+} from './ProgressBar'
+export { PillBadge, pillBadgeVariants, type PillBadgeProps } from './PillBadge'
+export {
+  SectionTitle,
+  sectionTitleVariants,
+  type SectionTitleProps,
+} from './SectionTitle'
+export { Divider, dividerVariants, type DividerProps } from './Divider'
