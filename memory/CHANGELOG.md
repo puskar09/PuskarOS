@@ -98,3 +98,15 @@
 - `src/components/ui/Divider.tsx` — separator with horizontal/vertical orientation, glow variants, and optional centered label.
 - `src/components/ui/index.ts` — barrel export updated with all primitives and TypeScript prop types.
 **Notes:** Built with CVA, Tailwind CSS, and Puskar OS design tokens. Zero business logic or page-specific code. Production build compiled cleanly with 0 errors.
+
+---
+
+## Phase 5 — Application Shell & Structural Layout
+**Date:** 2026-07-05
+**Work:** Built the structural layout of Puskar OS using existing architecture and UI primitives. The application now looks like a calm, empty operating system ready to receive modules.
+**Files Created / Modified:**
+- `src/components/layout/RightSidebar.tsx` — Right Sidebar structural container with independent vertical scroll behavior, responsive sizing (`hidden xl:flex`), and empty OS module state using `SectionTitle` and `Divider`.
+- `src/components/layout/FloatingPromptBar.tsx` — persistent Floating AI Prompt Bar container dynamically centered inside the main workspace across all breakpoints, styled with `GlassCard` and `PillBadge`.
+- `src/components/layout/AppLayout.tsx` — root layout shell assembled with Fixed Left Sidebar, scrollable Main Workspace (`main#main-workspace`), Right Sidebar container, and Floating AI Prompt Bar container.
+- `src/components/layout/index.ts` — updated barrel export including all four structural layout components and prop types.
+**Notes:** Zero placeholder cards or widgets created. Scroll behavior decoupled across containers (`overflow-y-auto` per column) to prevent scroll chaining. Build compiled cleanly with 0 errors.
