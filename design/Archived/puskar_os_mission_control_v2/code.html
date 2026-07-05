@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Puskar OS Home Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Geist:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#c6c6c7",
+                        "surface": "#131313",
+                        "surface-variant": "#353534",
+                        "on-primary-fixed-variant": "#004395",
+                        "primary-container": "#4d8eff",
+                        "on-primary-container": "#00285d",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#c2c6d6",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error": "#690005",
+                        "surface-container": "#201f1f",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-primary": "#002e6a",
+                        "primary-fixed-dim": "#adc6ff",
+                        "inverse-primary": "#005ac2",
+                        "on-background": "#e5e2e1",
+                        "secondary-container": "#454747",
+                        "inverse-on-surface": "#313030",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-container": "#b4b5b5",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "background": "#131313",
+                        "on-secondary": "#2f3131",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "tertiary-container": "#929090",
+                        "primary-fixed": "#d8e2ff",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-tertiary": "#313030",
+                        "on-tertiary-container": "#2a2a2a",
+                        "surface-bright": "#3a3939",
+                        "surface-tint": "#adc6ff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-surface": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#001a42",
+                        "outline-variant": "#424754",
+                        "secondary-fixed": "#e2e2e2",
+                        "primary": "#adc6ff",
+                        "error": "#ffb4ab",
+                        "outline": "#8c909f",
+                        "surface-container-highest": "#353534",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "surface-dim": "#131313",
+                        "tertiary": "#c8c6c5",
+                        "on-tertiary-fixed": "#1c1b1b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "xs": "4px",
+                        "gutter": "16px",
+                        "xl": "40px",
+                        "sm": "8px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "sidebar-width": "260px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "code-md": ["Geist"],
+                        "label-sm": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "code-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
+<div class="flex h-screen w-full">
+<!-- Left Sidebar: SideNavBar -->
+<aside class="w-sidebar-width h-screen fixed left-0 top-0 bg-surface dark:bg-surface border-r border-outline-variant flex flex-col p-md z-50">
+<!-- Header -->
+<div class="flex items-center gap-3 mb-8 px-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A futuristic, minimalist geometric logo representing a highly advanced artificial intelligence operating system. The logo features sharp angles, glowing neon blue accents against a dark matte black background. It is sleek, symmetric, and conveys a sense of high-performance computing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWCWOKOfbucpPU8_edO6NefqenSBs4ds-AZMMEd0rmoH6VmQSbLSgWzieucgkezQRU6OdZKuzV7_CkZ5O4Ebuhokpi0iNVrOsORsZQDd_qnn52AtoV13ysk52JJbKRT-V1N1R2j9XdKzx74JN53YDiJ-qB4k8DrlYpHkDCDYwXfCA4C_FNuJySBxZFrujp5Hq6VxlhOfmJ3_iF95kvei10m_DgQ8G2if2mrxBGp5UEUSSkHi9iq35thSVWNFwbPzQjeNDRpGJI3ls"/>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface">Puskar OS</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-code-md">v1.0.4-stable</p>
+</div>
+</div>
+<!-- Main Navigation -->
+<nav class="flex-1 space-y-2">
+<a class="bg-surface-container-high text-on-surface rounded-lg px-4 py-2 flex items-center gap-3 active:scale-95 transition-transform hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-primary dark:text-primary">home</span>
+<span>Home</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-2 flex items-center gap-3 hover:bg-surface-container-low transition-colors duration-200 active:scale-95 transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined">target</span>
+<span>Mission</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-2 flex items-center gap-3 hover:bg-surface-container-low transition-colors duration-200 active:scale-95 transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined">school</span>
+<span>Learn</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-2 flex items-center gap-3 hover:bg-surface-container-low transition-colors duration-200 active:scale-95 transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined">construction</span>
+<span>Build</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-2 flex items-center gap-3 hover:bg-surface-container-low transition-colors duration-200 active:scale-95 transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined">monitor_heart</span>
+<span>Pulse</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-2 flex items-center gap-3 hover:bg-surface-container-low transition-colors duration-200 active:scale-95 transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined">fitness_center</span>
+<span>Fitness</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-2 flex items-center gap-3 hover:bg-surface-container-low transition-colors duration-200 active:scale-95 transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<!-- Footer Navigation -->
+<div class="mt-auto space-y-2 pt-4 border-t border-outline-variant/30">
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-2 flex items-center gap-3 hover:bg-surface-container-low transition-colors duration-200 active:scale-95 transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Support</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-2 flex items-center gap-3 hover:bg-surface-container-low transition-colors duration-200 active:scale-95 transition-transform rounded-lg text-error" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area (Center + Right Sidebar) -->
+<main class="ml-sidebar-width flex-1 flex h-screen overflow-hidden">
+<!-- Center Content -->
+<div class="flex-1 overflow-y-auto px-xl py-xl custom-scrollbar flex flex-col gap-lg">
+<!-- Greeting -->
+<header class="mb-4">
+<h2 class="font-display-lg text-display-lg font-bold text-on-surface tracking-tight">Good Morning, Puskar <span class="text-primary">👋</span></h2>
+</header>
+<!-- Enhanced Mission Control -->
+<div class="bg-surface-container-high rounded-2xl p-8 border border-outline-variant/50 relative overflow-hidden group shadow-lg">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-transparent opacity-100 transition-opacity duration-500"></div>
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="flex justify-between items-start mb-8 relative z-10">
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-[20px]">my_location</span>
+<p class="font-label-sm text-label-sm text-primary font-code-md uppercase tracking-[0.2em]">Primary Objective</p>
+</div>
+<h3 class="text-4xl font-bold text-on-surface tracking-tight mb-2">Become Internship Ready</h3>
+<p class="text-on-surface-variant font-body-lg">Master core ML concepts and ship 3 production-ready projects.</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-display-lg text-display-lg font-bold text-primary leading-none">72<span class="text-2xl text-primary/70">%</span></span>
+<span class="font-code-md text-code-md text-on-surface-variant mt-1">Completion Rate</span>
+</div>
+</div>
+<div class="h-3 w-full bg-surface-container-lowest rounded-full overflow-hidden relative z-10 border border-outline-variant/30 shadow-inner">
+<div class="h-full bg-gradient-to-r from-primary/80 to-primary rounded-full relative" style="width: 72%;">
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9InBhdHRlcm4iIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgNDBMMDAgMEw0MCA0MFoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')] opacity-30"></div>
+</div>
+</div>
+</div>
+<!-- Daily Timeline & Today's Focus -->
+<section class="grid grid-cols-1 xl:grid-cols-3 gap-lg">
+<div class="xl:col-span-2">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-on-surface-variant">target</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">Today's Focus</h4>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md h-full">
+<!-- Learn Card -->
+<div class="bg-surface-container border border-outline-variant/50 rounded-xl p-5 hover:border-primary/50 transition-colors duration-300 flex flex-col cursor-pointer group">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center border border-outline-variant/30 text-primary">
+<span class="material-symbols-outlined text-sm">school</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-code-md uppercase">Learn</span>
+</div>
+<h5 class="font-body-lg text-body-lg font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors">Transformer Architectures</h5>
+<div class="mt-auto flex items-center gap-2 text-on-surface-variant pt-4 border-t border-outline-variant/20">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-code-md text-code-md">45 mins</span>
+</div>
+</div>
+<!-- Build Card -->
+<div class="bg-surface-container border border-outline-variant/50 rounded-xl p-5 hover:border-primary/50 transition-colors duration-300 flex flex-col cursor-pointer group">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center border border-outline-variant/30 text-primary">
+<span class="material-symbols-outlined text-sm">construction</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-code-md uppercase">Build</span>
+</div>
+<h5 class="font-body-lg text-body-lg font-semibold text-on-surface mb-1 group-hover:text-primary transition-colors">Puskar OS - Auth</h5>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">Implement OAuth module for secure access.</p>
+</div>
+<!-- Ship Card -->
+<div class="bg-surface-container border border-outline-variant/50 rounded-xl p-5 hover:border-primary/50 transition-colors duration-300 flex flex-col cursor-pointer group">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center border border-outline-variant/30 text-primary">
+<span class="material-symbols-outlined text-sm">rocket_launch</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-code-md uppercase">Ship</span>
+</div>
+<h5 class="font-body-lg text-body-lg font-semibold text-on-surface mb-1 group-hover:text-primary transition-colors">GitHub PR</h5>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">Fix issue #42 in the core CLI tool.</p>
+</div>
+</div>
+</div>
+<!-- Mission Control Timeline -->
+<div class="xl:col-span-1">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-on-surface-variant">timeline</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">Timeline</h4>
+</div>
+<div class="bg-surface-container border border-outline-variant/50 rounded-xl p-6 h-[180px] overflow-y-auto custom-scrollbar relative">
+<div class="absolute left-8 top-6 bottom-6 w-px bg-outline-variant/30"></div>
+<div class="space-y-6 relative z-10">
+<div class="flex gap-4">
+<div class="w-12 text-right pt-0.5">
+<span class="font-code-md text-label-sm text-on-surface-variant">09:00</span>
+</div>
+<div class="relative">
+<div class="w-3 h-3 rounded-full bg-primary ring-4 ring-surface-container absolute top-1.5 -left-[22px]"></div>
+<div class="bg-surface-container-high rounded-lg p-3 border border-outline-variant/30">
+<p class="font-body-md font-medium text-on-surface">Deep Work: Pushkar OS</p>
+</div>
+</div>
+</div>
+<div class="flex gap-4 opacity-60">
+<div class="w-12 text-right pt-0.5">
+<span class="font-code-md text-label-sm text-on-surface-variant">11:00</span>
+</div>
+<div class="relative">
+<div class="w-3 h-3 rounded-full bg-outline-variant ring-4 ring-surface-container absolute top-1.5 -left-[22px]"></div>
+<div class="bg-surface-container-high rounded-lg p-3 border border-outline-variant/30">
+<p class="font-body-md font-medium text-on-surface">Research: Kaggle Kernels</p>
+</div>
+</div>
+</div>
+<div class="flex gap-4 opacity-60">
+<div class="w-12 text-right pt-0.5">
+<span class="font-code-md text-label-sm text-on-surface-variant">14:00</span>
+</div>
+<div class="relative">
+<div class="w-3 h-3 rounded-full bg-outline-variant ring-4 ring-surface-container absolute top-1.5 -left-[22px]"></div>
+<div class="bg-surface-container-high rounded-lg p-3 border border-outline-variant/30">
+<p class="font-body-md font-medium text-on-surface">Sprint Sync</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects & Insights Bento -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-md flex-1 min-h-[300px]">
+<!-- Active Project Enrichment -->
+<div class="lg:col-span-2 bg-surface-container border border-outline-variant/50 rounded-xl p-6 flex flex-col relative overflow-hidden group">
+<div class="flex justify-between items-start mb-6">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">code_blocks</span>
+<span class="font-label-sm text-label-sm text-primary font-code-md uppercase tracking-wider">Active Project</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg font-bold text-on-surface">Puskar OS Core</h3>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface border border-outline-variant/50 flex items-center justify-center hover:bg-surface-variant transition-colors group-hover:border-primary/50 text-on-surface">
+<span class="material-symbols-outlined">arrow_outward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-code-md mb-2 uppercase tracking-wider">Next Task</p>
+<div class="bg-surface-container-high rounded-lg p-3 border border-outline-variant/30 flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+<span class="font-body-md font-medium text-on-surface">Refactor Auth Middleware</span>
+</div>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-code-md mb-2 uppercase tracking-wider">Recent Commits</p>
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-body-md">
+<span class="font-code-md text-primary bg-primary/10 px-1.5 py-0.5 rounded text-xs">a1b2c3d</span>
+<span class="text-on-surface-variant truncate">Update tailwind config for dark mode</span>
+</div>
+<div class="flex items-center gap-2 text-body-md">
+<span class="font-code-md text-primary bg-primary/10 px-1.5 py-0.5 rounded text-xs">f8e7d6c</span>
+<span class="text-on-surface-variant truncate">Fix layout shift in sidebar</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-auto space-y-4 pt-4 border-t border-outline-variant/20">
+<div class="flex justify-between items-end">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-code-md mb-1 uppercase tracking-wider">Milestone Progress</p>
+<p class="font-body-lg text-body-lg font-medium text-on-surface">Beta Release <span class="text-on-surface-variant font-normal text-sm ml-2">- 3 days left</span></p>
+</div>
+<div class="text-right">
+<p class="font-code-md text-code-md text-on-surface-variant mb-1">Sprint 4/5</p>
+<p class="font-code-md text-primary text-sm font-bold">80%</p>
+</div>
+</div>
+<div class="flex gap-2 h-2 w-full">
+<div class="h-full bg-primary rounded-l-full flex-1"></div>
+<div class="h-full bg-primary rounded-none flex-1"></div>
+<div class="h-full bg-primary rounded-none flex-1"></div>
+<div class="h-full bg-primary rounded-none flex-1"></div>
+<div class="h-full bg-surface border border-outline-variant/30 rounded-r-full flex-1"></div>
+</div>
+</div>
+</div>
+<!-- AI Concept Vertical Stack (Keeping Concept, replacing news with Kaggle in Right Sidebar) -->
+<div class="flex flex-col gap-md">
+<!-- AI Concept -->
+<div class="bg-surface-container border border-outline-variant/50 rounded-xl p-5 flex-1 flex flex-col hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-code-md uppercase tracking-wider">Concept of the Day</span>
+</div>
+<h4 class="font-body-lg text-body-lg font-semibold text-on-surface mb-2">Attention Mechanism</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-4">A technique in neural networks that allows models to dynamically focus on relevant parts of the input sequence.</p>
+<button class="mt-auto self-start text-primary font-label-sm text-label-sm font-code-md border-b border-primary/30 hover:border-primary pb-0.5 transition-colors uppercase">Learn More</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Sidebar Overhaul -->
+<aside class="w-[320px] bg-surface border-l border-outline-variant flex flex-col p-lg gap-lg overflow-y-auto hidden xl:flex">
+<!-- Date & Time -->
+<div class="flex flex-col gap-1 mb-2">
+<h2 class="font-display-lg text-display-lg font-bold text-on-surface leading-none" id="clock">09:41</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant font-medium">Thursday, Oct 24</p>
+</div>
+<!-- Streak Widget -->
+<div class="bg-surface-container-high rounded-xl p-5 border border-outline-variant/30 flex items-center justify-between group cursor-default">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-code-md mb-1 uppercase tracking-wider">Current Streak</p>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface group-hover:text-primary transition-colors">42</span>
+<span class="font-body-md text-body-md text-on-surface-variant">days</span>
+</div>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface border border-outline-variant/50 flex items-center justify-center text-primary shadow-[0_0_15px_rgba(77,142,255,0.15)] group-hover:shadow-[0_0_20px_rgba(77,142,255,0.3)] transition-all">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</div>
+<!-- Upcoming Deadline -->
+<div class="bg-surface-container rounded-xl p-5 border border-outline-variant/30 border-l-2 border-l-error">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-error text-[18px]">timer</span>
+<span class="font-label-sm text-label-sm text-error font-code-md uppercase tracking-wider">Upcoming Deadline</span>
+</div>
+<h4 class="font-body-lg text-body-lg font-medium text-on-surface mb-1">Internship Application</h4>
+<p class="font-body-md text-body-md text-on-surface-variant font-code-md">Due in 3 days</p>
+</div>
+<!-- GitHub Activity -->
+<div class="bg-surface-container rounded-xl p-5 border border-outline-variant/30">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">commit</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-code-md uppercase tracking-wider">GitHub Pulse</span>
+</div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-body-md text-on-surface-variant">14 Contributions today</span>
+<span class="font-label-sm text-primary bg-primary/10 px-2 py-0.5 rounded font-code-md">ON FIRE</span>
+</div>
+<div class="grid grid-cols-7 gap-1">
+<!-- Fake Heatmap -->
+<div class="w-full aspect-square rounded-[2px] bg-outline-variant/20"></div>
+<div class="w-full aspect-square rounded-[2px] bg-primary/30"></div>
+<div class="w-full aspect-square rounded-[2px] bg-primary/60"></div>
+<div class="w-full aspect-square rounded-[2px] bg-primary"></div>
+<div class="w-full aspect-square rounded-[2px] bg-primary/40"></div>
+<div class="w-full aspect-square rounded-[2px] bg-outline-variant/20"></div>
+<div class="w-full aspect-square rounded-[2px] bg-primary/80"></div>
+</div>
+</div>
+<!-- Kaggle Progress -->
+<div class="bg-surface-container rounded-xl p-5 border border-outline-variant/30">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">leaderboard</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-code-md uppercase tracking-wider">Kaggle Arena</span>
+</div>
+<div class="flex justify-between items-center mb-3">
+<div>
+<p class="font-body-lg font-medium text-on-surface">Titanic Survival</p>
+<p class="font-body-md text-on-surface-variant">Top 8%</p>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/50 flex items-center justify-center text-on-surface-variant">
+<span class="font-code-md text-xs font-bold">K</span>
+</div>
+</div>
+<div class="w-full bg-surface rounded-full h-1.5 overflow-hidden border border-outline-variant/30">
+<div class="bg-on-surface h-1.5 rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<!-- Today's AI Pulse -->
+<div class="flex-1 bg-surface-container rounded-xl border border-outline-variant/30 flex flex-col overflow-hidden">
+<div class="px-4 py-3 border-b border-outline-variant/30 bg-surface-container-high flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">satellite_alt</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-code-md uppercase tracking-wider">AI Pulse</span>
+</div>
+<div class="p-4 space-y-4 overflow-y-auto custom-scrollbar flex-1">
+<div class="group cursor-pointer">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary opacity-80"></span>
+<span class="font-code-md text-xs text-on-surface-variant">10m ago</span>
+</div>
+<p class="font-body-md text-on-surface group-hover:text-primary transition-colors leading-snug">OpenAI drops new fine-tuning API endpoints for GPT-4o.</p>
+</div>
+<div class="group cursor-pointer">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant opacity-80"></span>
+<span class="font-code-md text-xs text-on-surface-variant">2h ago</span>
+</div>
+<p class="font-body-md text-on-surface group-hover:text-primary transition-colors leading-snug">New paper: Efficient attention mechanisms in low-resource environments.</p>
+</div>
+<div class="group cursor-pointer">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant opacity-80"></span>
+<span class="font-code-md text-xs text-on-surface-variant">5h ago</span>
+</div>
+<p class="font-body-md text-on-surface group-hover:text-primary transition-colors leading-snug">HuggingFace crosses 1M models hub milestone.</p>
+</div>
+</div>
+</div>
+</aside>
+</main>
+</div>
+<style>
+        /* Custom Scrollbar for sleek aesthetic */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #353534;
+            border-radius: 10px;
+        }
+        .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+            background-color: #424754;
+        }
+    </style>
+<script>
+        // Simple clock update
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('clock').textContent = hours + ':' + minutes;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body></html>

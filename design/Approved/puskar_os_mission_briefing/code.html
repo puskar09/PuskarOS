@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Puskar OS - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-container": "#2a2a2a",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "secondary-fixed": "#e2e2e2",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-variant": "#353534",
+                        "surface-tint": "#adc6ff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary-fixed": "#001a42",
+                        "surface-bright": "#3a3939",
+                        "on-primary": "#002e6a",
+                        "surface": "#131313",
+                        "on-tertiary": "#313030",
+                        "on-primary-fixed-variant": "#004395",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "outline": "#8c909f",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-surface-variant": "#c2c6d6",
+                        "error-container": "#93000a",
+                        "surface-container": "#201f1f",
+                        "secondary-container": "#454747",
+                        "on-secondary-container": "#b4b5b5",
+                        "surface-container-highest": "#353534",
+                        "on-background": "#e5e2e1",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-dim": "#131313",
+                        "primary-container": "#4d8eff",
+                        "on-secondary": "#2f3131",
+                        "outline-variant": "#424754",
+                        "on-primary-container": "#00285d",
+                        "on-secondary-fixed-variant": "#454747",
+                        "secondary": "#c6c6c7",
+                        "primary": "#adc6ff",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "inverse-primary": "#005ac2",
+                        "tertiary-fixed": "#e5e2e1",
+                        "tertiary-container": "#929090",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131313",
+                        "tertiary": "#c8c6c5",
+                        "primary-fixed-dim": "#adc6ff",
+                        "primary-fixed": "#d8e2ff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "sm": "8px",
+                        "md": "16px",
+                        "base": "4px",
+                        "xl": "40px",
+                        "gutter": "16px",
+                        "lg": "24px",
+                        "sidebar-width": "260px",
+                        "xs": "4px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "code-md": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "body-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "code-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #0A0A0A; color: #e5e2e1; }
+        .glass-panel { background: rgba(26, 26, 26, 0.7); backdrop-filter: blur(20px); border: 1px solid #262626; }
+        .glass-panel-subtle { background: rgba(34, 34, 34, 0.4); backdrop-filter: blur(10px); border: 1px solid #333333; }
+        .glow-effect:hover { box-shadow: 0 0 15px rgba(59, 130, 246, 0.2); }
+    </style>
+</head>
+<body class="font-body-md text-body-md h-screen overflow-hidden flex">
+<!-- Collapsed Sidebar -->
+<aside class="w-[80px] h-screen fixed left-0 top-0 border-r border-[#262626] bg-[#0A0A0A] flex flex-col items-center py-xl z-50">
+<div class="mb-xl flex-shrink-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center border border-[#262626]">
+<span class="material-symbols-outlined text-primary text-xl">terminal</span>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-6 w-full items-center">
+<a class="w-12 h-12 rounded-xl bg-[#1A1A1A] flex items-center justify-center text-on-surface border border-[#262626] relative group" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<div class="absolute inset-0 rounded-xl border border-primary/30 pointer-events-none"></div>
+</a>
+<a class="w-12 h-12 rounded-xl flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-[#1A1A1A] transition-all group" href="#">
+<span class="material-symbols-outlined">target</span>
+</a>
+<a class="w-12 h-12 rounded-xl flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-[#1A1A1A] transition-all group" href="#">
+<span class="material-symbols-outlined">school</span>
+</a>
+<a class="w-12 h-12 rounded-xl flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-[#1A1A1A] transition-all group" href="#">
+<span class="material-symbols-outlined">construction</span>
+</a>
+<a class="w-12 h-12 rounded-xl flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-[#1A1A1A] transition-all group" href="#">
+<span class="material-symbols-outlined">monitor_heart</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-6 items-center w-full">
+<a class="w-12 h-12 rounded-xl flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-[#1A1A1A] transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+</a>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-[#262626] mb-md cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A detailed close-up portrait of a professional developer in a dimly lit, modern workspace with blue accent lighting reflecting softly on their face, creating a cinematic, focused, and high-tech atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6oMfKWvutp7khHUECRw-4hvOd8VjD3jIc7wxAtqdb40EAv19m33nC9ZXj15Yy0mLRw30FtDT18tgNq7fG_u4f0A9mR-tmAw67kSACLpgP7WImoqnf9Bx7D-htw-J-7za2EsEtWvXXecT9n0fFYfeq3uBvpUR55CipwwKYe3sK5EX8NmcKKD2azDyb78c7dKFNRPmApcnFyaf-y4_D5kfKc9mhZ2-vO-aQmVlJmBZy9WwhSEd5Ag23Q1LybLCATEcSxz78WqGfgs4"/>
+</div>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="ml-[80px] flex-1 h-screen overflow-y-auto overflow-x-hidden p-xl">
+<div class="max-w-[1400px] mx-auto space-y-xl">
+<!-- Hero / Mission Briefing -->
+<section class="glass-panel rounded-[32px] p-xl relative overflow-hidden flex flex-col justify-between min-h-[340px]">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
+<div class="relative z-10 flex justify-between items-start">
+<div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-2 tracking-tight">Good Morning, Puskar <span class="text-3xl">👋</span></h1>
+<div class="flex items-center gap-3 text-on-surface-variant font-body-lg text-body-lg">
+<span class="px-3 py-1 rounded-full bg-[#1A1A1A] border border-[#262626] text-primary text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">flag</span> Mission Day 5 / 30
+                            </span>
+<span>Become Internship Ready</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-code-md text-code-md text-on-surface-variant mb-1">Estimated Focus Time</div>
+<div class="font-headline-lg text-headline-lg text-on-surface">4h 20m</div>
+</div>
+</div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 mb-8">
+<div class="flex items-center gap-4 bg-[#0A0A0A] p-4 rounded-2xl border border-[#262626]">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20 text-primary">1</div>
+<span class="font-headline-md text-[18px] text-on-surface">Learn Random Forests</span>
+</div>
+<div class="flex items-center gap-4 bg-[#0A0A0A] p-4 rounded-2xl border border-[#262626]">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center border border-[#333] text-on-surface-variant">2</div>
+<span class="font-headline-md text-[18px] text-on-surface-variant">Build House Price Predictor</span>
+</div>
+<div class="flex items-center gap-4 bg-[#0A0A0A] p-4 rounded-2xl border border-[#262626]">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center border border-[#333] text-on-surface-variant">3</div>
+<span class="font-headline-md text-[18px] text-on-surface-variant">Push one GitHub Commit</span>
+</div>
+</div>
+<div class="relative z-10 flex justify-center mt-auto">
+<button class="bg-[#e5e2e1] text-[#0A0A0A] px-10 py-4 rounded-full font-headline-md text-[18px] flex items-center gap-3 hover:bg-white transition-all transform hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(229,226,225,0.15)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                        Start Today's Journey
+                    </button>
+</div>
+</section>
+<!-- Grid Layout for Content -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column (Journey & Mentor) -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<!-- AI Mentor Widget -->
+<div class="glass-panel-subtle rounded-3xl p-6 flex gap-6 items-start">
+<div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#1A1A1A] to-[#0A0A0A] border border-[#333] flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(77,142,255,0.1)] relative overflow-hidden">
+<span class="material-symbols-outlined text-primary text-2xl z-10 relative">smart_toy</span>
+<div class="absolute inset-0 bg-primary/10 animate-pulse"></div>
+</div>
+<div>
+<h3 class="font-code-md text-label-sm text-primary mb-2 uppercase tracking-widest">System Mentor</h3>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+                                Good morning. Yesterday you completed <span class="text-on-surface bg-[#1A1A1A] px-2 py-0.5 rounded border border-[#262626]">Decision Trees</span>. Today we're learning <span class="text-on-surface bg-[#1A1A1A] px-2 py-0.5 rounded border border-[#262626]">Random Forests</span>. You're making great progress. Let's begin.
+                            </p>
+</div>
+</div>
+<!-- Daily Journey Flow -->
+<div class="flex-1 glass-panel rounded-3xl p-8">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8">Daily Progression</h2>
+<div class="relative pl-8 border-l-2 border-[#262626] space-y-12">
+<!-- Step 1: Active -->
+<div class="relative">
+<div class="absolute -left-[41px] w-6 h-6 rounded-full bg-[#0A0A0A] border-2 border-primary flex items-center justify-center z-10">
+<div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#3B82F6]"></div>
+</div>
+<div class="bg-[#1A1A1A] border border-primary/30 rounded-2xl p-6 glow-effect transition-all relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-[20px] text-on-surface">Learn Phase</h3>
+<span class="font-code-md text-xs text-primary px-3 py-1 rounded-full bg-primary/10 border border-primary/20">IN PROGRESS</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6">Mastering Random Forest architecture and hyperparameter tuning in scikit-learn.</p>
+<div class="flex gap-4">
+<button class="bg-[#e5e2e1] text-[#0A0A0A] px-6 py-2.5 rounded-lg font-headline-md text-sm hover:bg-white transition-colors">Resume Module</button>
+<button class="bg-transparent border border-[#333] text-on-surface px-6 py-2.5 rounded-lg font-headline-md text-sm hover:bg-[#1A1A1A] transition-colors">View Notes</button>
+</div>
+</div>
+</div>
+<!-- Step 2: Locked -->
+<div class="relative opacity-50">
+<div class="absolute -left-[41px] w-6 h-6 rounded-full bg-[#0A0A0A] border-2 border-[#333] flex items-center justify-center z-10">
+</div>
+<div>
+<h3 class="font-headline-md text-[20px] text-on-surface-variant mb-2">Build Phase</h3>
+<p class="font-body-md text-on-surface-variant/70">Implement a House Price Predictor using the learned concepts.</p>
+</div>
+</div>
+<!-- Step 3: Locked -->
+<div class="relative opacity-50">
+<div class="absolute -left-[41px] w-6 h-6 rounded-full bg-[#0A0A0A] border-2 border-[#333] flex items-center justify-center z-10">
+</div>
+<div>
+<h3 class="font-headline-md text-[20px] text-on-surface-variant mb-2">Ship Phase</h3>
+<p class="font-body-md text-on-surface-variant/70">Commit to GitHub and document your findings.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (Widgets) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Active Project -->
+<div class="glass-panel rounded-3xl p-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-[18px] text-on-surface">Active Sprint</h3>
+<span class="material-symbols-outlined text-on-surface-variant">more_horiz</span>
+</div>
+<div class="mb-6">
+<div class="flex justify-between text-sm mb-2">
+<span class="font-code-md text-on-surface">Sprint 4: ML Core</span>
+<span class="font-code-md text-primary">80%</span>
+</div>
+<div class="h-2 w-full bg-[#1A1A1A] rounded-full overflow-hidden border border-[#262626]">
+<div class="h-full bg-primary rounded-full w-[80%] relative">
+<div class="absolute top-0 right-0 bottom-0 left-0 bg-white/20"></div>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-[#1A1A1A] p-4 rounded-xl border border-[#262626]">
+<div class="font-code-md text-xs text-on-surface-variant mb-1">NEXT TASK</div>
+<div class="font-body-lg text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                                    Refactor Auth Logic
+                                </div>
+</div>
+<div class="bg-[#1A1A1A] p-4 rounded-xl border border-[#262626]">
+<div class="font-code-md text-xs text-on-surface-variant mb-1">RECENT COMMIT</div>
+<div class="font-body-md text-on-surface font-code-md truncate">feat(model): init random forest baseline</div>
+<div class="font-code-md text-[10px] text-on-surface-variant mt-2 text-right">2 hours ago</div>
+</div>
+</div>
+</div>
+<!-- GitHub Activity -->
+<div class="glass-panel-subtle rounded-2xl p-5">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-headline-md text-[16px] text-on-surface flex items-center gap-2">
+<span class="text-lg">🔥</span> Activity
+                            </h4>
+<span class="font-code-md text-xs text-on-surface-variant">32 day streak</span>
+</div>
+<!-- Simplified Grid Representation -->
+<div class="grid grid-cols-7 gap-1">
+<!-- Generating randomish blocks for visual effect -->
+<script>
+                                for(let i=0; i<35; i++) {
+                                    let intensity = Math.random();
+                                    let bg = intensity > 0.8 ? 'bg-primary' : intensity > 0.5 ? 'bg-primary/60' : intensity > 0.2 ? 'bg-primary/30' : 'bg-[#1A1A1A]';
+                                    document.write(`<div class="aspect-square rounded-[2px] ${bg} border border-[#262626]/50"></div>`);
+                                }
+                            </script>
+</div>
+</div>
+<!-- AI Brief -->
+<div class="glass-panel-subtle rounded-2xl p-5 flex-1">
+<h4 class="font-headline-md text-[16px] text-on-surface flex items-center gap-2 mb-4">
+<span class="text-lg">📰</span> AI Brief
+                        </h4>
+<div class="space-y-3">
+<a class="block p-3 rounded-xl hover:bg-[#1A1A1A] transition-colors border border-transparent hover:border-[#262626]" href="#">
+<h5 class="font-body-md text-on-surface mb-1 line-clamp-2">OpenAI releases new fine-tuning API for smaller models</h5>
+<span class="font-code-md text-[10px] text-on-surface-variant">Hacker News • 1h ago</span>
+</a>
+<div class="h-[1px] w-full bg-[#262626]"></div>
+<a class="block p-3 rounded-xl hover:bg-[#1A1A1A] transition-colors border border-transparent hover:border-[#262626]" href="#">
+<h5 class="font-body-md text-on-surface mb-1 line-clamp-2">Why Random Forests still beat Deep Learning on tabular data</h5>
+<span class="font-code-md text-[10px] text-on-surface-variant">Towards Data Science • 4h ago</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Global AI Prompt Bar (Floating Bottom) -->
+<div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 w-full max-w-2xl z-50 px-4 md:px-0">
+<div class="bg-[#1A1A1A]/90 backdrop-blur-xl border border-[#333] rounded-full p-2 pl-6 flex items-center shadow-[0_10px_40px_rgba(0,0,0,0.5)] focus-within:border-primary/50 focus-within:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all">
+<span class="material-symbols-outlined text-on-surface-variant mr-3">spark</span>
+<input class="flex-1 bg-transparent border-none text-on-surface font-body-md placeholder:text-on-surface-variant/50 focus:ring-0 px-0" placeholder="Ask System Mentor to explain a concept or analyze code..." type="text"/>
+<button class="w-10 h-10 rounded-full bg-[#2a2a2a] flex items-center justify-center text-on-surface hover:bg-[#333] transition-colors ml-2">
+<span class="material-symbols-outlined text-[20px]">arrow_upward</span>
+</button>
+</div>
+</div>
+<!-- Bottom Spacer for floating bar -->
+<div class="h-24"></div>
+</div>
+</main>
+</body></html>
