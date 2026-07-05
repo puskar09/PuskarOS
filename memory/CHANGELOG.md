@@ -62,3 +62,23 @@
 - `frondend/src/main.tsx` — entry point
 **Notes:** Build passes with 0 errors. TS6 deprecation of baseUrl handled — using Vite aliases for runtime resolution, tsconfig paths for IDE intellisense. Tailwind CSS v4 installed with @tailwindcss/vite plugin.
 
+---
+
+## Phase 2.5 — Architectural Improvements
+**Date:** 2026-07-05
+**Work:** Component structure reorganized. New root folders scaffolded. Feature shared module created.
+**Files Created / Modified:**
+- `src/components/ui/index.ts` — atomic UI primitives layer (stub)
+- `src/components/shared/index.ts` — cross-feature presentational components layer (stub)
+- `src/components/layout/Sidebar.tsx` — canonical Sidebar (migrated from src/layouts/)
+- `src/components/layout/AppLayout.tsx` — canonical AppLayout (migrated from src/layouts/)
+- `src/components/layout/index.ts` — layout barrel export
+- `src/components/index.ts` — updated to export all three tiers (ui, shared, layout)
+- `src/layouts/AppLayout.tsx` — converted to re-export (alias compatibility)
+- `src/layouts/Sidebar.tsx` — converted to re-export (alias compatibility)
+- `src/services/index.ts` — services layer stub (storageService, missionService planned)
+- `src/types/index.ts` — domain types layer stub (mission, user, project, etc. planned)
+- `src/features/shared/index.ts` — feature-level shared module stub
+- `vite.config.ts` — added @services, @types, @ui, @shared aliases
+- `tsconfig.app.json` — matching path additions
+**Notes:** Build passes 0 errors. src/layouts/ kept as re-export layer for alias compatibility. Canonical implementations are now in src/components/layout/.

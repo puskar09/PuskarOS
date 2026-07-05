@@ -1,14 +1,23 @@
 /**
- * Shared components barrel export.
- * Add exports here as components are built in Phase 3+.
+ * components/ — three-tier component system
  *
- * Planned components (from DECISIONS.md):
- * GlassCard, GlassCardSubtle, ProgressBar, TimelineStep,
- * PillBadge, ActivityGrid, AIPromptBar, PageHeader,
- * StatChip, NewsCard
+ * ┌─────────────────────────────────────────────────────────┐
+ * │  ui/       Pure, stateless atomic primitives            │
+ * │            GlassCard, ProgressBar, PillBadge, etc.      │
+ * ├─────────────────────────────────────────────────────────┤
+ * │  shared/   Business-aware, multi-feature components     │
+ * │            PageHeader, NewsCard, TimelineStep, etc.     │
+ * ├─────────────────────────────────────────────────────────┤
+ * │  layout/   App shell, navigation, structural wrappers   │
+ * │            AppLayout, Sidebar                           │
+ * └─────────────────────────────────────────────────────────┘
+ *
+ * Import from the specific sub-folder for clarity:
+ *   import { GlassCard } from '@components/ui'
+ *   import { PageHeader } from '@components/shared'
+ *   import { AppLayout } from '@components/layout'
  */
 
-// export { GlassCard } from './GlassCard'
-// export { GlassCardSubtle } from './GlassCardSubtle'
-// export { ProgressBar } from './ProgressBar'
-// ... etc.
+export * from './ui'
+export * from './shared'
+export * from './layout'

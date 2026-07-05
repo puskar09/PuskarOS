@@ -32,7 +32,11 @@
       "@lib/*": ["./src/lib/*"],
       "@store/*": ["./src/store/*"],
       "@router/*": ["./src/router/*"],
-      "@styles/*": ["./src/styles/*"]
+      "@styles/*": ["./src/styles/*"],
+      "@services/*": ["./src/services/*"],
+      "@types/*": ["./src/types/*"],
+      "@ui/*": ["./src/components/ui/*"],
+      "@shared/*": ["./src/components/shared/*"]
     }
   },
   "include": ["src"]

@@ -38,13 +38,19 @@ src/
     projects/
     fitness/
     settings/
-  components/       ← shared/reusable UI primitives
-  layouts/          ← AppLayout (sidebar + main workspace)
-  lib/              ← utilities, constants, helpers
-  hooks/            ← shared custom hooks
-  store/            ← global state (if needed, e.g. Zustand)
-  router/           ← React Router DOM config
-  styles/           ← global CSS, Tailwind config
+    shared/           ← feature-level shared components (multi-feature)
+  components/
+    ui/               ← atomic, stateless UI primitives
+    shared/           ← business-aware, cross-feature presentational
+    layout/           ← AppLayout, Sidebar (app shell)
+  layouts/            ← re-export shims (alias compatibility only)
+  lib/                ← utilities, constants, helpers
+  hooks/              ← shared custom hooks
+  store/              ← global state / ThemeProvider
+  router/             ← React Router DOM config
+  services/           ← data access layer (API, localStorage, integrations)
+  types/              ← shared TypeScript domain types
+  styles/             ← global CSS, design tokens
   App.tsx
   main.tsx
 ```

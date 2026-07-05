@@ -12,6 +12,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      // Core folders
       '@components': path.resolve(__dirname, './src/components'),
       '@features': path.resolve(__dirname, './src/features'),
       '@layouts': path.resolve(__dirname, './src/layouts'),
@@ -20,6 +21,12 @@ export default defineConfig({
       '@store': path.resolve(__dirname, './src/store'),
       '@router': path.resolve(__dirname, './src/router'),
       '@styles': path.resolve(__dirname, './src/styles'),
+      // New folders (Phase 2.5)
+      '@services': path.resolve(__dirname, './src/services'),
+      '@types': path.resolve(__dirname, './src/types'),
+      // Component sub-folder shortcuts
+      '@ui': path.resolve(__dirname, './src/components/ui'),
+      '@shared': path.resolve(__dirname, './src/components/shared'),
     },
   },
 })
